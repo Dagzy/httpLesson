@@ -11,11 +11,8 @@ app.get('/', (req, res)=>{
     console.log(req)
 })
 app.use('/',(req, res)=>{
-    let stuff = JSON.stringify(req.body)
-    console.log(stuff)
-    let content = req.body.theInput
-    let text = `${content}, `
-    fs.appendFile('output.txt', stuff, (err)=>{
+    let content = JSON.stringify(req.body)
+    fs.appendFile('output.txt', content, (err)=>{
         if(err){
             console.log(err)
         }else{
