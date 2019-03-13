@@ -7,9 +7,7 @@ const PORT = 9001;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors())
-app.get('/', (req, res)=>{
-    console.log(req)
-})
+
 app.use('/',(req, res)=>{
     let content = JSON.stringify(req.body)
     fs.appendFile('output.txt', content, (err)=>{
